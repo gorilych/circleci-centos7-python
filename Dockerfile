@@ -2,9 +2,10 @@ FROM centos:centos7
 MAINTAINER Andrey Kartashov <gorilych@gmail.com>
 
 RUN yum update -y && \
+  yum install -y epel-release && \
   yum install -y \
   which git python-setuptools python-devel openssl-devel libffi-devel \
-  libyaml-devel gcc wget diff patch
+  libyaml-devel gcc wget diff patch rst2pdf
 
 RUN easy_install virtualenv
 RUN easy_install pip
